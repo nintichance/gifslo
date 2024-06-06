@@ -23,6 +23,7 @@ input, button{
 input{
   width: 400px;
   background-color: aliceblue;
+  color: black;
 }
 .gif-bag{
   display: grid;
