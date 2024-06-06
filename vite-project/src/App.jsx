@@ -1,15 +1,16 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import GifBag from './components/GifBag'
-
+import GifCarousel from './components/GifCarousel'
+import { Routes, Route } from 'react-router-dom'
 function App() {
 
   return (
     <>
       <div>
-        <GifBag/>
+        <Routes>
+          <Route path="/" element={<GifBag/>}/>
+          <Route path="/carousel" element={<GifCarousel/>} />
+        </Routes>
       </div>
     </>
   )
