@@ -27,6 +27,7 @@ const GifContextProvider = (children) => {
         gifs,
         setGifs
     }
+    
     return (
         <GifContext.Provider value={values}>
             {children}
