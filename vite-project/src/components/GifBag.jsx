@@ -1,21 +1,10 @@
-import React, {useState, useEffect } from 'react'
-import axios from 'axios'
-import { API_URL } from '../API'
+import React from 'react'
+import { useGifContext } from '../contexts/GifContext'
+
+
 
 const GifBag = () => {
-    const [gifs, setGifs] = useState([])
-    const [search, setSearch] = useState("")
-    
-    const getGifs = () => {
-        const apiKey = import.meta.env.VITE_GIPHY_API_KEY
-        axios.get(`${API_URL}/search?api_key=${apiKey}&q=${search}&offset=0&limit=24&rating=g&lang=en&bundle=messaging_non_clips`)
-        .then((res)=>{
-            console.log("RES", res.data.data)
-            setGifs(res.data.data)
-        }).catch((err)=>{
-            console.log(err)
-        })
-    }
+    const { gifs, getGifs, search, setSearch } = useGifContext()
 
     const handleChange = (e) => {
         e.preventDefault()
